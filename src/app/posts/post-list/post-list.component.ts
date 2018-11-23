@@ -4,6 +4,7 @@ import { Subscription } from 'rxjs/Subscription';
 
 import { Post } from '../post.model';
 import { PostService } from '../post.service';
+import {AuthService} from '../../auth/auth.service';
 
 @Component({
   selector: 'app-post-list',
@@ -16,7 +17,8 @@ export class PostListComponent implements OnInit, OnDestroy {
 
   constructor(private postService: PostService,
               private router: Router,
-              private route: ActivatedRoute) {
+              private route: ActivatedRoute,
+              public  authService: AuthService) {
   }
 
   ngOnInit() {

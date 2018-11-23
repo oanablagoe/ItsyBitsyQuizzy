@@ -11,7 +11,7 @@ export class PostService {
   private posts: Post[] = [
     ];
 
-  constructor(private slService: UserListService) {}
+  constructor() {}
 
   setPosts(posts: Post[]) {
     this.posts = posts;
@@ -29,6 +29,11 @@ export class PostService {
   addPost(post: Post) {
     this.posts.push(post);
     this.postsChanged.next(this.posts.slice());
+  }
+  deletePost(post: Post) {
+    const index = this.posts.indexOf(post);
+    this.posts.slice(index, 1);
+
   }
 
   updatePost(index: number, newPost: Post) {

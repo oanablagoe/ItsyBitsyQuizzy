@@ -1,8 +1,8 @@
-import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Params, Router } from '@angular/router';
-import { FormGroup, FormControl, FormArray, Validators } from '@angular/forms';
+import {Component, OnInit} from '@angular/core';
+import {ActivatedRoute, Params, Router} from '@angular/router';
+import {FormGroup, FormControl, FormArray, Validators} from '@angular/forms';
 
-import { PostService } from '../post.service';
+import {PostService} from '../post.service';
 import {Post} from '../post.model';
 import * as firebase from 'firebase';
 
@@ -66,5 +66,4 @@ export class NewPostComponent implements OnInit {
       'description': new FormControl(postDescription, Validators.required),
     });
   }
-
 }

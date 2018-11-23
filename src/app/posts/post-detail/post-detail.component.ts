@@ -3,6 +3,7 @@ import { ActivatedRoute, Params, Router } from '@angular/router';
 
 import {Post} from '../post.model';
 import { PostService } from '../post.service';
+import {AuthService} from '../../auth/auth.service';
 
 @Component({
   selector: 'app-post-detail',
@@ -15,9 +16,8 @@ export class PostDetailComponent implements OnInit {
 
   constructor(private postService: PostService,
               private route: ActivatedRoute,
-              private router: Router) {
+              public authService: AuthService) {
   }
-
   ngOnInit() {
     this.route.params
       .subscribe(
@@ -27,5 +27,10 @@ export class PostDetailComponent implements OnInit {
         }
       );
   }
+  onDelete() {
+    this.postService.deletePost(this.post);
+  }
 
+  onModify() {
+  }
 }

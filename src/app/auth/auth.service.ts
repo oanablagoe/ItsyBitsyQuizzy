@@ -34,6 +34,7 @@ export class AuthService {
   logout() {
     firebase.auth().signOut();
     this.token = null;
+    this.router.navigate(['/signin']);
   }
 
   getToken() {
@@ -49,6 +50,6 @@ export class AuthService {
   }
 
   isAdmin() {
-    return firebase.auth().currentUser.email === 'oana.blagoe@gmail.com';
+    return this.isAuthenticated() && firebase.auth().currentUser.email === 'oana.blagoe@gmail.com';
   }
 }
