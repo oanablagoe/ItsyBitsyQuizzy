@@ -9,6 +9,8 @@ import { NewPostComponent } from './posts/new-post/new-post.component';
 import { SignupComponent } from './auth/signup/signup.component';
 import { SigninComponent } from './auth/signin/signin.component';
 import { AuthGuard } from './auth/auth-guard.service';
+import {AppComponent} from './app.component';
+import {QuestionsComponent} from './questions/questions.component';
 
 const appRoutes: Routes = [
   { path: '', redirectTo: '/posts', pathMatch: 'full' },
@@ -18,8 +20,10 @@ const appRoutes: Routes = [
     { path: ':id', component: PostDetailComponent, canActivate: [AuthGuard] },
   ] },
   { path: 'user-list', component: UserListComponent, canActivate: [AuthGuard] },
+  { path: 'app', component: AppComponent},
   { path: 'signup', component: SignupComponent },
   { path: 'signin', component: SigninComponent },
+  {path: 'questions', component: QuestionsComponent}
 ];
 
 @NgModule({

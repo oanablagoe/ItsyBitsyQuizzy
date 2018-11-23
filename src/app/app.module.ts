@@ -22,7 +22,8 @@ import { SignupComponent } from './auth/signup/signup.component';
 import { SigninComponent } from './auth/signin/signin.component';
 import { AuthService } from './auth/auth.service';
 import { AuthGuard } from './auth/auth-guard.service';
-import { MainpageComponent } from './mainpage/mainpage.component';
+import { QuestionsComponent } from './questions/questions.component';
+
 
 @NgModule({
   declarations: [
@@ -39,7 +40,7 @@ import { MainpageComponent } from './mainpage/mainpage.component';
     NewPostComponent,
     SignupComponent,
     SigninComponent,
-    MainpageComponent
+    QuestionsComponent,
   ],
   imports: [
     BrowserModule,

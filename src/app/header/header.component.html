@@ -1,7 +1,7 @@
 <nav class="navbar navbar-default">
   <div class="container-fluid">
     <div class="navbar-header">
-      <a routerLink="/" class="navbar-brand">QuizMe</a>
+      <a routerLink="/main" class="navbar-brand">QuizMe</a>
     </div>
 
     <div class="collapse navbar-collapse">
@@ -13,7 +13,9 @@
           <li><a routerLink="/signup">Register</a></li>
           <li><a routerLink="/signin">Login</a></li>
         </ng-template>
-        <li routerLinkActive="active"><a routerLink="/shopping-list" *ngIf="authService.isAuthenticated() && authService.isAdmin()">User List</a></li>
+        <li routerLinkActive="active"><a routerLink="/questions"
+                                         *ngIf="authService.isAuthenticated() && authService.isAdmin()">Questions</a>
+        </li>
 
         <li><a
           style="cursor: pointer;"
