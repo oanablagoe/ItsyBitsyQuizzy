@@ -4,11 +4,11 @@ import {
   OnDestroy,
   ViewChild
 } from '@angular/core';
-import { NgForm } from '@angular/forms';
-import { Subscription } from 'rxjs/Subscription';
+import {NgForm} from '@angular/forms';
+import {Subscription} from 'rxjs/Subscription';
 
-import { User } from '../../shared/user.model';
-import { UserListService } from '../user-list.service';
+import {User} from '../../shared/user.model';
+import {UserListService} from '../user-list.service';
 
 @Component({
   selector: 'app-user-edit',
@@ -22,7 +22,8 @@ export class UserEditComponent implements OnInit, OnDestroy {
   editedItemIndex: number;
   editedItem: User;
 
-  constructor(private slService: UserListService) { }
+  constructor(private slService: UserListService) {
+  }
 
   ngOnInit() {
     this.subscription = this.slService.startedEditing
@@ -32,7 +33,8 @@ export class UserEditComponent implements OnInit, OnDestroy {
           this.editMode = true;
           this.editedItem = this.slService.getUser(index);
           this.slForm.setValue({
-            name: this.editedItem.name});
+            name: this.editedItem.name
+          });
         }
       );
   }
@@ -50,6 +52,16 @@ export class UserEditComponent implements OnInit, OnDestroy {
   onDelete() {
     this.slService.deleteUser(this.editedItemIndex);
     this.onClear();
+  }
+
+  onEdit() {
+    const name = (<HTMLInputElement>document.getElementById('name')).value;
+    this.slService.editUser(this.editedItemIndex, new User(name));
+  }
+
+  onAdd() {
+    const name = (<HTMLInputElement>document.getElementById('name')).value;
+    this.slService.addUser(new User(name));
   }
 
   ngOnDestroy() {

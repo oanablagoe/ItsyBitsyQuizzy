@@ -1,7 +1,18 @@
 <div class="row">
   <div class="col-xs-12">
     <button *ngIf="authService.isAdmin()" class="btn btn-primary nav-item nav-link-edit" [routerLink]="['new']">Add New Event</button>
-  </div>
+</div>
+</div>
+<div>
+  <button class="dropdown" appDropdown *ngIf="authService.isAuthenticated()">
+    <div>
+      <a  class="dropdown-toggle" role="button">Manage <span class="caret"></span></a>
+    </div>
+    <ul class="dropdown-menu">
+      <li><a style="cursor: pointer;" (click)="sortByName()">Sort by Name</a></li>
+      <li><a style="cursor: pointer;" (click)="sortByDate()">Sort by Date</a></li>
+    </ul>
+  </button>
 </div>
 <hr>
 <div class="row">

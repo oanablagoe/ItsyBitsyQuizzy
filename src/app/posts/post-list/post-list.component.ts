@@ -1,9 +1,9 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
-import { Router, ActivatedRoute } from '@angular/router';
-import { Subscription } from 'rxjs/Subscription';
+import {Component, OnInit, OnDestroy} from '@angular/core';
+import {Router, ActivatedRoute} from '@angular/router';
+import {Subscription} from 'rxjs/Subscription';
 
-import { Post } from '../post.model';
-import { PostService } from '../post.service';
+import {Post} from '../post.model';
+import {PostService} from '../post.service';
 import {AuthService} from '../../auth/auth.service';
 
 @Component({
@@ -33,6 +33,33 @@ export class PostListComponent implements OnInit, OnDestroy {
 
   onNewPost() {
     this.router.navigate(['new'], {relativeTo: this.route});
+  }
+
+  sortByName() {
+    this.posts.sort(function (a, b) {
+      if (a.title < b.title) {
+        return -1;
+      }
+      if (a.title > b.title) {
+        return 1;
+      }
+      return 0;
+
+    });
+    console.log(this.posts);
+  }
+
+  sortByDate() {
+    this.posts.sort(function (a, b) {
+      if (a.date < b.date) {
+        return -1;
+      }
+      if (a.date > b.date) {
+        return 1;
+      }
+      return 0;
+
+    });
   }
 
   ngOnDestroy() {

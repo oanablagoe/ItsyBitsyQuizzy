@@ -1,17 +1,25 @@
-import { User } from '../shared/user.model';
-import { Subject } from 'rxjs/Subject';
+import {User} from '../shared/user.model';
+import {Subject} from 'rxjs/Subject';
 
 export class UserListService {
   usersChanged = new Subject<User[]>();
   startedEditing = new Subject<number>();
 
   private users: User[] = [
-    new User('asd'),
-    new User('aaa')
+    new User('java'),
+    new User('mySQL')
   ];
 
   getUsers() {
     return this.users;
+  }
+
+  editUser(index: number, user: User) {
+    this.users[index] = user;
+  }
+
+  addUser(user: User) {
+    this.users.push(user);
   }
 
   getUser(index: number) {
@@ -19,8 +27,8 @@ export class UserListService {
   }
 
   deleteUser(index: number) {
-      this.users.splice(index, 1);
-      this.usersChanged.next(this.users.slice());
+    this.users.splice(index, 1);
+    this.usersChanged.next(this.users.slice());
   }
 
 }

@@ -1,7 +1,7 @@
-<nav class="navbar navbar-default">
+<nav style="background: darkorange" class="navbar navbar-default">
   <div class="container-fluid">
     <div class="navbar-header">
-      <a routerLink="/main" class="navbar-brand">QuizMe</a>
+      <a routerLink="/" class="navbar-brand">QuizMe</a>
     </div>
 
     <div class="collapse navbar-collapse">
@@ -13,8 +13,8 @@
           <li><a routerLink="/signup">Register</a></li>
           <li><a routerLink="/signin">Login</a></li>
         </ng-template>
-        <li routerLinkActive="active"><a routerLink="/questions"
-                                         *ngIf="authService.isAuthenticated() && authService.isAdmin()">Questions</a>
+        <li routerLinkActive="active"><a routerLink="/user-list"
+                                         *ngIf="authService.isAuthenticated() && authService.isAdmin()">Category</a>
         </li>
 
         <li><a
@@ -29,7 +29,6 @@
             <li><a style="cursor: pointer;" (click)="onFetchData()">Fetch Events</a></li>
           </ul>
         </li>
-
 
       </ul>
     </div>
