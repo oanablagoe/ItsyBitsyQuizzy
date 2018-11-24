@@ -25,7 +25,7 @@ const appRoutes: Routes = [
   { path: 'app', component: AppComponent},
   { path: 'signup', component: SignupComponent },
   { path: 'signin', component: SigninComponent },
-  { path: 'questions', component: QuizListComponent},
+  { path: 'quiz-list', component: QuizListComponent},
   { path: 'quiz', component: QuizzComponent,  children: [
       { path: ':id', component: QuizzComponent },
 
