@@ -23,7 +23,34 @@ import { SigninComponent } from './auth/signin/signin.component';
 import { AuthService } from './auth/auth.service';
 import { AuthGuard } from './auth/auth-guard.service';
 import { QuestionsComponent } from './questions/questions.component';
+import {
+  SocialLoginModule,
+  AuthServiceConfig,
+  GoogleLoginProvider,
+  FacebookLoginProvider,
+  LinkedinLoginProvider
+} from 'angular-6-social-login';
+import { EditPostComponent } from './posts/edit-post/edit-post.component';
 
+export function getAuthServiceConfigs() {
+  const config = new AuthServiceConfig(
+    [
+      {
+        id: FacebookLoginProvider.PROVIDER_ID,
+        provider: new FacebookLoginProvider('Your-Facebook-app-id')
+      },
+      {
+        id: GoogleLoginProvider.PROVIDER_ID,
+        provider: new GoogleLoginProvider('Your-Google-Client-Id')
+      },
+      {
+        id: LinkedinLoginProvider.PROVIDER_ID,
+        provider: new LinkedinLoginProvider('1098828800522-m2ig6bieilc3tpqvmlcpdvrpvn86q4ks.apps.googleusercontent.com')
+      },
+    ]
+);
+  return config;
+}
 
 @NgModule({
   declarations: [
@@ -41,15 +68,20 @@ import { QuestionsComponent } from './questions/questions.component';
     SignupComponent,
     SigninComponent,
     QuestionsComponent,
+    EditPostComponent,
   ],
   imports: [
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
     HttpModule,
+    SocialLoginModule,
     AppRoutingModule
   ],
-  providers: [UserListService, PostService, DataStorageService, AuthService, AuthGuard],
+  providers: [UserListService, PostService, DataStorageService, AuthService, AuthGuard,{
+    provide: AuthServiceConfig,
+    useFactory: getAuthServiceConfigs
+  }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
