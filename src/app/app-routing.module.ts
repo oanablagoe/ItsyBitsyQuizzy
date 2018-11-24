@@ -11,6 +11,7 @@ import { SigninComponent } from './auth/signin/signin.component';
 import { AuthGuard } from './auth/auth-guard.service';
 import {AppComponent} from './app.component';
 import {QuestionsComponent} from './questions/questions.component';
+import {QuizzComponent} from './quizz/quizz.component';
 
 const appRoutes: Routes = [
   { path: '', redirectTo: '/posts', pathMatch: 'full' },
@@ -23,7 +24,8 @@ const appRoutes: Routes = [
   { path: 'app', component: AppComponent},
   { path: 'signup', component: SignupComponent },
   { path: 'signin', component: SigninComponent },
-  {path: 'questions', component: QuestionsComponent}
+  {path: 'questions', component: QuestionsComponent},
+  {path: 'quiz', component: QuizzComponent}
 ];
 
 @NgModule({

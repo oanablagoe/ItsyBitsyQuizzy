@@ -6,10 +6,11 @@
       <a
         class="list-group-item"
         style="cursor: pointer"
-        *ngFor="let user of users; let i = index"
+        *ngFor="let category of categories; let i = index"
         (click)="onEditItem(i)"
       >
-        {{ user.name }}
+        {{ category.name }}
+        <button class="btn-success" (click)="goToQuiz()"> Quizzes</button>
       </a>
     </ul>
   </div>

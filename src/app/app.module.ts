@@ -2,7 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
-
+import { QRCodeModule } from 'angularx-qrcode';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { PostComponent } from './posts/post.component';
@@ -23,7 +23,8 @@ import { SigninComponent } from './auth/signin/signin.component';
 import { AuthService } from './auth/auth.service';
 import { AuthGuard } from './auth/auth-guard.service';
 import { QuestionsComponent } from './questions/questions.component';
-
+import {CategoryService} from '../services/category-service';
+import { QuizzComponent } from './quizz/quizz.component';
 
 @NgModule({
   declarations: [
@@ -41,15 +42,17 @@ import { QuestionsComponent } from './questions/questions.component';
     SignupComponent,
     SigninComponent,
     QuestionsComponent,
+    QuizzComponent,
   ],
   imports: [
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
     HttpModule,
-    AppRoutingModule
+    AppRoutingModule,
+    QRCodeModule
   ],
-  providers: [UserListService, PostService, DataStorageService, AuthService, AuthGuard],
+  providers: [UserListService, PostService, DataStorageService, AuthService, AuthGuard , CategoryService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -28,6 +28,7 @@ export class PostDetailComponent implements OnInit {
       );
   }
   onDelete() {
+    console.log('asss');
     this.postService.deletePost(this.post);
   }
 
