@@ -5,7 +5,7 @@ export class QuestionModel {
   public theQuestion: string;
 
   constructor( theQuestion: string) {
-    theQuestion = theQuestion;
+    this.theQuestion = theQuestion;
 
   }
 

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {QuizModel} from '../../models/quiz-model';
 import {Router} from '@angular/router';
 import {QuizzComponent} from '../quizz/quizz.component';
@@ -6,14 +6,14 @@ import {QuizzComponent} from '../quizz/quizz.component';
 
 @Component({
   selector: 'app-questions',
-  templateUrl: './questions.component.html',
-  styleUrls: ['./questions.component.css']
+  templateUrl: './quiz-list.component.html',
+  styleUrls: ['./quiz-list.component.css']
 })
-export class QuestionsComponent implements OnInit {
+export class QuizListComponent implements OnInit {
   quizzes: QuizModel[];
 
-  constructor(private  router: Router){
-              // private qr: QuizzComponent) {
+  constructor(private  router: Router) {
+    // private qr: QuizzComponent) {
   }
 
   ngOnInit() {
@@ -24,7 +24,6 @@ export class QuestionsComponent implements OnInit {
   }
 
   goToQuiz(index: number) {
-    // this.qr.generate(index);
     this.router.navigate(['/quiz/' + index]);
 
   }

@@ -5,8 +5,7 @@ export class AnswerService {
   answersChanged = new Subject<AnswerModel[]>();
   startedEditing = new Subject<number>();
 
-  private answers: AnswerModel[] = [
-  ];
+  private answers: AnswerModel[] = [];
 
 
   constructor() {

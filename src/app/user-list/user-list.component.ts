@@ -51,7 +51,7 @@ export class UserListComponent implements OnInit, OnDestroy {
   }
 
   goToQuiz() {
-    this.router.navigate(['/questions']);
+    this.router.navigate(['/quiz-list']);
   }
 
   onFetchData() {

@@ -14,7 +14,6 @@
     {{ post.description }}
   </div>
   <button *ngIf="authService.isAdmin()" type="button" class="btn btn-success" (click)="onDelete()">Delete</button>
-  <!--<button *ngIf="authService.isAdmin()" type="button" class="btn btn-success" (click)="onModify()">Modifyaawwaaea</button>-->
   <button *ngIf="authService.isAdmin()" class="btn btn-primary nav-item nav-link-edit" (click)="onModify()">Modify</button>
 
 </div>

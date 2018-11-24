@@ -10,7 +10,7 @@ import { SignupComponent } from './auth/signup/signup.component';
 import { SigninComponent } from './auth/signin/signin.component';
 import { AuthGuard } from './auth/auth-guard.service';
 import {AppComponent} from './app.component';
-import {QuestionsComponent} from './questions/questions.component';
+import {QuizListComponent} from './quiz-list/quiz-list.component';
 import {QuizzComponent} from './quizz/quizz.component';
 import {WelcomeComponent} from './welcome/welcome.component';
 
@@ -25,7 +25,7 @@ const appRoutes: Routes = [
   { path: 'app', component: AppComponent},
   { path: 'signup', component: SignupComponent },
   { path: 'signin', component: SigninComponent },
-  { path: 'questions', component: QuestionsComponent},
+  { path: 'questions', component: QuizListComponent},
   { path: 'quiz', component: QuizzComponent,  children: [
       { path: ':id', component: QuizzComponent },
 

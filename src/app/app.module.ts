@@ -22,7 +22,7 @@ import { SignupComponent } from './auth/signup/signup.component';
 import { SigninComponent } from './auth/signin/signin.component';
 import { AuthService } from './auth/auth.service';
 import { AuthGuard } from './auth/auth-guard.service';
-import { QuestionsComponent } from './questions/questions.component';
+import { QuizListComponent } from './quiz-list/quiz-list.component';
 import {CategoryService} from '../services/category-service';
 import { QuizzComponent } from './quizz/quizz.component';
 import { WelcomeComponent } from './welcome/welcome.component';
@@ -42,7 +42,7 @@ import { WelcomeComponent } from './welcome/welcome.component';
     NewPostComponent,
     SignupComponent,
     SigninComponent,
-    QuestionsComponent,
+    QuizListComponent,
     QuizzComponent,
     WelcomeComponent,
   ],
