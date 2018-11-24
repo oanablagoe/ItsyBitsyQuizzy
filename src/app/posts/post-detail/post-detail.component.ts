@@ -16,6 +16,7 @@ export class PostDetailComponent implements OnInit {
 
   constructor(private postService: PostService,
               private route: ActivatedRoute,
+              private router: Router,
               public authService: AuthService) {
   }
   ngOnInit() {
@@ -33,5 +34,7 @@ export class PostDetailComponent implements OnInit {
   }
 
   onModify() {
+    this.router.navigate(['/posts/new']);
+
   }
 }
