@@ -7,8 +7,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class QuizzComponent implements OnInit {
   myAngularxQrCode: string = null;
+
   constructor() {
-    this.myAngularxQrCode = 'Your QR code data string';
+  }
+
+  generate(index: number) {
+    this.myAngularxQrCode = '/' + index;
+
   }
 
   ngOnInit() {

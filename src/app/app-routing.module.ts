@@ -12,9 +12,10 @@ import { AuthGuard } from './auth/auth-guard.service';
 import {AppComponent} from './app.component';
 import {QuestionsComponent} from './questions/questions.component';
 import {QuizzComponent} from './quizz/quizz.component';
+import {WelcomeComponent} from './welcome/welcome.component';
 
 const appRoutes: Routes = [
-  { path: '', redirectTo: '/posts', pathMatch: 'full' },
+  { path: '', redirectTo: '/welcome', pathMatch: 'full' },
   { path: 'posts', component: PostComponent, children: [
     { path: '', component: PostStartComponent },
     { path: 'new', component: NewPostComponent, canActivate: [AuthGuard] },
@@ -24,8 +25,13 @@ const appRoutes: Routes = [
   { path: 'app', component: AppComponent},
   { path: 'signup', component: SignupComponent },
   { path: 'signin', component: SigninComponent },
-  {path: 'questions', component: QuestionsComponent},
-  {path: 'quiz', component: QuizzComponent}
+  { path: 'questions', component: QuestionsComponent},
+  { path: 'quiz', component: QuizzComponent,  children: [
+      { path: ':id', component: QuizzComponent },
+
+    ]},
+  { path: 'welcome', component: WelcomeComponent}
+
 ];
 
 @NgModule({

@@ -25,7 +25,6 @@
     "bootstrap": "3.3.7",
     "firebase": "4.12.1",
     "core-js": "^2.5.4",
-    "firebase": "4.12.1",
     "rxjs": "^6.0.0",
     "rxjs-compat": "^6.1.0",
     "zone.js": "^0.8.26"

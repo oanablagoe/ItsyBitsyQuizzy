@@ -25,6 +25,7 @@ import { AuthGuard } from './auth/auth-guard.service';
 import { QuestionsComponent } from './questions/questions.component';
 import {CategoryService} from '../services/category-service';
 import { QuizzComponent } from './quizz/quizz.component';
+import { WelcomeComponent } from './welcome/welcome.component';
 
 @NgModule({
   declarations: [
@@ -43,6 +44,7 @@ import { QuizzComponent } from './quizz/quizz.component';
     SigninComponent,
     QuestionsComponent,
     QuizzComponent,
+    WelcomeComponent,
   ],
   imports: [
     BrowserModule,
