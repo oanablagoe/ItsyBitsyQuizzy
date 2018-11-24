@@ -2,15 +2,16 @@ import { Injectable } from '@angular/core';
 import { Subject } from 'rxjs/Subject';
 
 import { Post } from './post.model';
-import { UserListService } from '../user-list/user-list.service';
+import {Response} from '@angular/http';
+import {DataStorageService} from '../shared/data-storage.service';
 
 @Injectable()
 export class PostService {
   postsChanged = new Subject<Post[]>();
 
   private posts: Post[] = [
-    ];
-
+  ];
+// private dataStorageService: DataStorageService
   constructor() {}
 
   setPosts(posts: Post[]) {
@@ -32,8 +33,19 @@ export class PostService {
   }
   deletePost(post: Post) {
     const index = this.posts.indexOf(post);
-    this.posts.slice(index, 1);
+    // this.posts.slice(index, 1);
+    // this.setPosts(this.posts);
+    // this.getPosts();
 
+    this.posts.splice(index, 1);
+    this.postsChanged.next(this.posts.slice());
+
+    // this.dataStorageService.storePosts()
+    //   .subscribe(
+    //     (response: Response) => {
+    //       console.log(response);
+    //     }
+    //   );
   }
 
   updatePost(index: number, newPost: Post) {
