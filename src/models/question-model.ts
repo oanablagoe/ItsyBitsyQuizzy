@@ -1,7 +1,7 @@
 import {AnswerModel} from './answer-model';
 
 export class QuestionModel {
-  private _answers: AnswerModel[];
+  public _answers: AnswerModel[];
   public theQuestion: string;
 
   constructor( theQuestion: string) {
@@ -12,4 +12,5 @@ export class QuestionModel {
   set answers(value: AnswerModel[]) {
     this._answers = value;
   }
+
 }

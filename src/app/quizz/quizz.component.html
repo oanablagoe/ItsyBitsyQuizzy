@@ -1,2 +1,20 @@
-<qrcode class="center" [qrdata]="myAngularxQrCode" [size]="256" [level]="'M'"></qrcode>
+<div class="row">
+  <div class="col-xs-12">
+    <ul class="list-group">
+      <li
+        class="list-group-item">
+        {{ quizModel.title }}
 
+      <table id="spreadsheet">
+        <tr *ngFor="let ans of quizModel._questions">
+          <td class="row-number-column">        {{ ans.theQuestion }}</td>
+          <td><p></p></td>
+          <td *ngFor="let caca of ans._answers">
+          {{caca.theAnswer}}
+        </tr>
+      </table>
+
+    </li>
+    </ul>
+  </div>
+</div>

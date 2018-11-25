@@ -1,7 +1,7 @@
 import {QuestionModel} from './question-model';
 
 export class QuizModel {
-  private _questions: QuestionModel[];
+  public _questions: QuestionModel[];
   public id: string;
   public title: string;
 

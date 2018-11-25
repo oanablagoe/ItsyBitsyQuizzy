@@ -13,7 +13,6 @@ export class QuizListComponent implements OnInit {
   quizzes: QuizModel[];
 
   constructor(private  router: Router) {
-    // private qr: QuizzComponent) {
   }
 
   ngOnInit() {
