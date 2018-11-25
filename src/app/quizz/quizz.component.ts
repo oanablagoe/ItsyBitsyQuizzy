@@ -3,6 +3,7 @@ import {QuizModel} from '../../models/quiz-model';
 import {AnswerModel} from '../../models/answer-model';
 import {QuestionModel} from '../../models/question-model';
 import {FormGroup} from '@angular/forms';
+import index from '@angular/cli/lib/cli';
 
 @Component({
   selector: 'app-quizz',
@@ -17,20 +18,26 @@ export class QuizzComponent implements OnInit {
   ans: AnswerModel;
   ansarr: AnswerModel[] = [];
   qmarr: QuestionModel[] = [];
+  myAngularxQrCode: string;
+  qm: QuestionModel;
+
   constructor() {
   }
 
   ngOnInit() {
+    this.quizModel = new QuizModel('QUIZ 1');
     for (let j = 0; j < 4; j++) {
-      const qm = new QuestionModel(this.makeRandom());
+      this.qm = new QuestionModel(this.makeRandom());
       for (let i = 0; i < 4; i++) {
         this.ans = new AnswerModel(this.makeRandom(), true);
         this.ansarr.push(this.ans);
       }
-      qm._answers = this.ansarr;
-      this.qmarr.push(qm);
+      this.qm.answers = this.ansarr;
+      this.qmarr.push(this.qm);
     }
-    this.quizModel._questions = this.qmarr;
+    console.log(this.qmarr);
+    this.quizModel.questions = this.qmarr;
+    this.myAngularxQrCode = 'http://10.10.10.66:4200/quiz/0';
   }
 
   onSubmit() {
@@ -46,5 +53,8 @@ export class QuizzComponent implements OnInit {
     }
 
     return text;
+  }
+
+  submitAnswers() {
   }
 }

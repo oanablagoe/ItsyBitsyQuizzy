@@ -16,6 +16,7 @@ export class QuizModel {
   }
 
   set questions(questions: QuestionModel[]) {
+    console.log(this.questions);
     this._questions = questions;
   }
 }

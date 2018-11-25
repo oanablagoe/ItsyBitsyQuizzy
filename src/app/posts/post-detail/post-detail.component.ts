@@ -4,6 +4,7 @@ import { ActivatedRoute, Params, Router } from '@angular/router';
 import {Post} from '../post.model';
 import { PostService } from '../post.service';
 import {AuthService} from '../../auth/auth.service';
+import {CategoryService} from '../../../services/category-service';
 
 @Component({
   selector: 'app-post-detail',
@@ -16,6 +17,7 @@ export class PostDetailComponent implements OnInit {
 
   constructor(private postService: PostService,
               private route: ActivatedRoute,
+              private category: CategoryService,
               private router: Router,
               public authService: AuthService) {
   }

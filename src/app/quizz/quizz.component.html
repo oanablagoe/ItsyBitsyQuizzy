@@ -1,3 +1,4 @@
+<qrcode [qrdata]='myAngularxQrCode' [size]="256" [level]="'M'"></qrcode>
 <div class="row">
   <div class="col-xs-12">
     <ul class="list-group">
@@ -6,6 +7,7 @@
         {{ quizModel.title }}
 
         <tr *ngFor="let ans of quizModel._questions">
+          <label><b>QUESTION</b></label>
           <p> {{ ans.theQuestion }}</p>
           <p *ngFor="let caca of ans._answers">
             <input type="radio" >
@@ -15,3 +17,4 @@
     </ul>
   </div>
 </div>
+<button type="submit" class="btn-success" onclick="submitAnswers()">Submit</button>

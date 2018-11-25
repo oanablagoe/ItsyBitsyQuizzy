@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {QuizModel} from '../../models/quiz-model';
 import {Router} from '@angular/router';
 import {QuizzComponent} from '../quizz/quizz.component';
+import {QuestionModel} from '../../models/question-model';
 
 
 @Component({
@@ -11,7 +12,8 @@ import {QuizzComponent} from '../quizz/quizz.component';
 })
 export class QuizListComponent implements OnInit {
   quizzes: QuizModel[];
-
+  questions: QuestionModel[];
+  index: number;
   constructor(private  router: Router) {
   }
 
@@ -23,6 +25,8 @@ export class QuizListComponent implements OnInit {
   }
 
   goToQuiz(index: number) {
+    this.index = index;
+
     this.router.navigate(['/quiz/' + index]);
 
   }
