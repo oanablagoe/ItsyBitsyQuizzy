@@ -5,16 +5,13 @@
         class="list-group-item">
         {{ quizModel.title }}
 
-      <table id="spreadsheet">
         <tr *ngFor="let ans of quizModel._questions">
-          <td class="row-number-column">        {{ ans.theQuestion }}</td>
-          <td><p></p></td>
-          <td *ngFor="let caca of ans._answers">
-          {{caca.theAnswer}}
+          <p> {{ ans.theQuestion }}</p>
+          <p *ngFor="let caca of ans._answers">
+            <input type="radio" >
+            {{caca.theAnswer}}
         </tr>
-      </table>
-
-    </li>
+      </li>
     </ul>
   </div>
 </div>
